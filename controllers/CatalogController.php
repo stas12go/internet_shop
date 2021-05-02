@@ -1,6 +1,4 @@
 <?php
-include_once ROOT . '/models/Category.php';
-include_once ROOT . '/models/Product.php';
 
 class CatalogController
 {
@@ -16,13 +14,18 @@ class CatalogController
         return true;
     }
 
-    public function actionCategory($categoryId)
+    public function actionCategory($categoryId, $page = 1)
     {
         $categories = [];
         $categories = Category::getCategoriesList();
 
         $categoryProducts = [];
-        $categoryProducts = Product::getProductsListByCategory($categoryId);
+        $categoryProducts = Product::getProductsListByCategory($categoryId, $page);
+
+        $total = Product::getTotalProductsInCategory($categoryId);
+        /* Создаём объект класса Pagination постраничной навигации */
+        $pagination = new Pagination($total, $page, Product::SHOW_BY_DEFAULT, 'page-');
         require_once ROOT . '/views/catalog/category.php';
+        return true;
     }
 }

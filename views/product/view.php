@@ -53,7 +53,7 @@ include ROOT . '/views/layouts/header.php';
                                         </span>
                                     <p><b>Наличие:</b> На складе</p>
                                     <p><b>Состояние:</b> Новое</p>
-                                    <p><b>Производитель:</b> <?=$product['brand'] ?></p>
+                                    <p><b>Производитель:</b> <?= $product['brand'] ?></p>
                                 </div><!--/product-information-->
                             </div>
                         </div>
@@ -61,7 +61,7 @@ include ROOT . '/views/layouts/header.php';
                             <div class="col-sm-12">
                                 <h5>Описание товара</h5>
                                 <p>
-                                    <?=$product['description'] ?>
+                                    <?= $product['description'] ?>
                                 </p>
                             </div>
                         </div>

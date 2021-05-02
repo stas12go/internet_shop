@@ -41,7 +41,9 @@ include ROOT . '/views/layouts/header.php';
                                                 <?= $productItem['name'] ?>
                                             </a>
                                         </p>
-                                        <a href="#" class="btn btn-default add-to-cart">
+                                        <a href="#"
+                                           class="btn btn-default add-to-cart"
+                                           data-id="<?= $productItem['id'] ?>">
                                             <i class="fa fa-shopping-cart"></i>
                                             В корзину
                                         </a>

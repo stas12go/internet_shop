@@ -13,7 +13,7 @@ include ROOT . '/views/layouts/header.php';
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
                                         <a href="/category/<?= $categoryItem['id'] ?>"
-                                        class="<?=($categoryId == $categoryItem['id']) ? 'active' : "" ?>"
+                                           class="<?= ($categoryId == $categoryItem['id']) ? 'active' : "" ?>"
                                         >
                                             <?= $categoryItem['name'] ?>
                                         </a>
@@ -43,7 +43,8 @@ include ROOT . '/views/layouts/header.php';
                                                 <?= $productItem['name'] ?>
                                             </a>
                                         </p>
-                                        <a href="#" class="btn btn-default add-to-cart">
+                                        <a href="/cart/add/<?= $productItem['id'] ?>" data-id="<?= $productItem['id'] ?>"
+                                           class="btn btn-default add-to-cart" >
                                             <i class="fa fa-shopping-cart"></i>
                                             В корзину
                                         </a>
@@ -56,6 +57,7 @@ include ROOT . '/views/layouts/header.php';
                         </div>
                     <?php endforeach; ?>
                 </div><!--features_items-->
+                <?= $pagination->get() ?>
             </div>
         </div>
     </div>
